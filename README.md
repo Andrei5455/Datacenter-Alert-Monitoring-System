@@ -36,10 +36,13 @@ abordare contribuie la cresterea lizibilitatii codului si faciliteaza mentenanta
 
 > Implementarea respecta principiul encapsularii prin folosirea atributelor de tipul private, alaturi de metode de tip 
 getter/setter asociate acestora. 
+
 > Abstractizarea este prezenta prin utilizarea clasei abstracte `User` care defineste structura comuna a utilizatorilor din sistem.
 Clasele concrete Admin si Operator extind aceasta clasa si ofera atribute specifice pentru fiecare tip de utilizator.
+
 > Mostenirea este realizata in aceasta implementare prin clasele `Admin` si `Operator` care mostenesc clasa User, preluand
 atributele si metodele de baza, extinzandu-le cu functionalitati specifice.
+ 
 > Polimorfismul este utilizat atat in ierarhia de utilizatori unde obiectele de tip `Admin` sau `Operator` sunt tratate
 uniform prin tipul abstract `User`, cat si in mecanismul de parsare a comenzilor. Interfata Command defineste metoda `execute()`
 care mai apoi este implementata de fiecare clasa in parte in functie de functionalitatile comenzilor.
