@@ -1,4 +1,9 @@
-package org.example;
+package org.example.command;
+
+import org.example.Command;
+import org.example.CommandTools;
+import org.example.ResourceGroup;
+import org.example.User;
 
 public class RemoveMemberCmd implements Command {
     public void execute(String[] tokens, CommandTools tools) {

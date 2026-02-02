@@ -1,6 +1,10 @@
-package org.example;
+package org.example.command;
 
-public class AddGroupCmd implements Command{
+import org.example.Command;
+import org.example.CommandTools;
+import org.example.ResourceGroup;
+
+public class AddGroupCmd implements Command {
     public void execute(String[] tokens, CommandTools tools) {
         ResourceGroup group = new ResourceGroup(tokens[1]);
         tools.database().addResourceGroup(group);

@@ -1,6 +1,8 @@
-package org.example;
+package org.example.command;
 
-public class AddMemberCmd implements Command{
+import org.example.*;
+
+public class AddMemberCmd implements Command {
     public void execute(String[] tokens, CommandTools tools) {
         if (!tools.database().findGroup(tokens[1]))
             tools.pw().println("ADD MEMBER: Group was not found: ipAddress = " + tokens[1]);

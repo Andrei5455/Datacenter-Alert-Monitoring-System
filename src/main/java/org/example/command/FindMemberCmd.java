@@ -1,6 +1,10 @@
-package org.example;
+package org.example.command;
 
-public class FindMemberCmd implements Command{
+import org.example.Command;
+import org.example.CommandTools;
+import org.example.ResourceGroup;
+
+public class FindMemberCmd implements Command {
     public void execute(String[] tokens, CommandTools tools) {
         if (!tools.database().findGroup(tokens[1]))
             tools.pw().println("FIND MEMBER: Group not found: ipAddress = " + tokens[1]);

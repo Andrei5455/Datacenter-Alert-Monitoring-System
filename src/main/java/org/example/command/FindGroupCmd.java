@@ -1,6 +1,9 @@
-package org.example;
+package org.example.command;
 
-public class FindGroupCmd implements Command{
+import org.example.Command;
+import org.example.CommandTools;
+
+public class FindGroupCmd implements Command {
     public void execute(String[] tokens, CommandTools tools) {
         if (tools.database().findGroup(tokens[1]))
             tools.pw().println("FIND GROUP: " + tokens[1]);

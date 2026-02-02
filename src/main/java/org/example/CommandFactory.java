@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.command.*;
+
 public class CommandFactory {
     public static Command create(String cmdName) {
         return switch (cmdName) {

@@ -1,6 +1,8 @@
-package org.example;
+package org.example.command;
 
-public class AddServerCmd implements Command{
+import org.example.*;
+
+public class AddServerCmd implements Command {
     public void execute(String[] tokens, CommandTools tools) {
         Location location = new Location.Builder(tokens[4]).setCity(tokens[5]).setAddress(tokens[6]).setLatitude(tokens[7]).setLongitude(tokens[8]).build();
         User owner = UserFactory.create(tokens[9], tokens[10], tokens[11], tokens[12], tokens[13]);
