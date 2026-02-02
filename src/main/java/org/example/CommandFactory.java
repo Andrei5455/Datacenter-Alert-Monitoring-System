@@ -2,26 +2,17 @@ package org.example;
 
 public class CommandFactory {
     public static Command create(String cmdName) {
-        switch (cmdName) {
-            case "ADD SERVER":
-                return new AddServerCmd();
-            case "ADD GROUP":
-                return new AddGroupCmd();
-            case "FIND GROUP":
-                return new FindGroupCmd();
-            case "REMOVE GROUP":
-                return new RemoveGroupCmd();
-            case "ADD MEMBER":
-                return new AddMemberCmd();
-            case "FIND MEMBER":
-                return new FindMemberCmd();
-            case "REMOVE MEMBER":
-                return new RemoveMemberCmd();
-            case "ADD EVENT":
-                return new AddEventCmd();
-            default:
-                return null;
-        }
+        return switch (cmdName) {
+            case "ADD SERVER" -> new AddServerCmd();
+            case "ADD GROUP" -> new AddGroupCmd();
+            case "FIND GROUP" -> new FindGroupCmd();
+            case "REMOVE GROUP" -> new RemoveGroupCmd();
+            case "ADD MEMBER" -> new AddMemberCmd();
+            case "FIND MEMBER" -> new FindMemberCmd();
+            case "REMOVE MEMBER" -> new RemoveMemberCmd();
+            case "ADD EVENT" -> new AddEventCmd();
+            default -> null;
+        };
     }
     private CommandFactory(){}
 }

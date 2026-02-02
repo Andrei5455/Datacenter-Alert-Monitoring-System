@@ -1,16 +1,14 @@
 package org.example;
 
-import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
-import java.lang.reflect.Member;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+
         Database database = Database.getInstance();
 
         for (int i = 1; i < args.length; i++) {

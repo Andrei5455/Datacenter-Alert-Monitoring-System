@@ -1,9 +1,9 @@
 package org.example;
 
 public enum ServerStatus {
-    UP("UP"),
-    DOWN("DOWN"),
-    DEGRADED("DEGRADED");
+    UP("up"),
+    DOWN("down"),
+    DEGRADED("degraded");
 
     private String status;
 
