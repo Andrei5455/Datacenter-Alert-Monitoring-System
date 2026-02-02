@@ -51,7 +51,7 @@ public class Main {
                         try {
                             if (database.findGroup(tokens[1]))
                                 pw.println("FIND GROUP: " + tokens[1]);
-                            else pw.println("FIND GROUP: Group was not found: ipAddress = " + tokens[1]);
+                            else pw.println("FIND GROUP: Group not found: ipAddress = " + tokens[1]);
                         } catch (MissingIpAddressException e) {
                             pw.print("FIND GROUP: " + e.getMessage());
                             pw.println(" ## line no: " + lineIndex);
@@ -60,7 +60,7 @@ public class Main {
                     case "REMOVE GROUP":
                         try {
                             if (!database.findGroup(tokens[1]))
-                                pw.println("FIND GROUP: Group was not found: ipAddress = " + tokens[1]);
+                                pw.println("REMOVE GROUP: Group not found: ipAddress = " + tokens[1]);
                             else {
                                 pw.println("REMOVE GROUP: " + tokens[1]);
                                 database.removeResourceGroup(tokens[1]);
@@ -88,7 +88,7 @@ public class Main {
                     case "FIND MEMBER":
                         try {
                             if (!database.findGroup(tokens[1]))
-                                pw.println("FIND MEMBER: Group was not found: ipAddress = " + tokens[1]);
+                                pw.println("FIND MEMBER: Group not found: ipAddress = " + tokens[1]);
                             else {
                                 ResourceGroup targetGroup = database.getResourceGroup(tokens[1]);
                                 if (targetGroup.findMember(tokens[2], tokens[3]) != null) {
@@ -105,7 +105,7 @@ public class Main {
                     case "REMOVE MEMBER":
                         try {
                             if (!database.findGroup(tokens[1]))
-                                pw.println("REMOVE MEMBER: Group was not found: ipAddress = " + tokens[1]);
+                                pw.println("REMOVE MEMBER: Group not found: ipAddress = " + tokens[1]);
                             else {
                                 ResourceGroup targetGroup = database.getResourceGroup(tokens[1]);
                                 User targetMember = targetGroup.findMember(tokens[2], tokens[3]);

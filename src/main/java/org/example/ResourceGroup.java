@@ -36,7 +36,7 @@ public class ResourceGroup {
     }
     public User findMember(String name, String role){
         if (name.isBlank() || role.isBlank())
-            throw new UserException("User Exception: Name and role can't be empty.");
+            throw new UserException("UserException: Name and role can't be empty.");
         else {
             for (User u : members)
                 if (u.getName().equals(name) && u.getRole().equals(role))
