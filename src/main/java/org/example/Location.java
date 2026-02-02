@@ -24,7 +24,10 @@ public class Location {
         private Double longitude;
 
         public Builder(String country) {
-            this.country = country;
+            if (country.isBlank())
+                throw new LocationException("ADD SERVER: LocationException: Country is missing.");
+            else
+                this.country = country;
         }
         public Builder setCity(String city) {
             this.city = city;

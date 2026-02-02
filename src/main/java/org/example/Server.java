@@ -34,7 +34,10 @@ public class Server {
         private Integer storageGb;
 
         public Builder(String ipAddress, Location location, User owner) {
-            this.ipAddress = ipAddress;
+            if (ipAddress.isBlank())
+                throw new MissingIpAddressException("ADD SERVER: MissingIpAddressException: Server IP Address was not provided.");
+            else
+                this.ipAddress = ipAddress;
             this.location = location;
             this.owner = owner;
         }
