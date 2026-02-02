@@ -46,3 +46,8 @@ atributele si metodele de baza, extinzandu-le cu functionalitati specifice.
 > Polimorfismul este utilizat atat in ierarhia de utilizatori unde obiectele de tip `Admin` sau `Operator` sunt tratate
 uniform prin tipul abstract `User`, cat si in mecanismul de parsare a comenzilor. Interfata Command defineste metoda `execute()`
 care mai apoi este implementata de fiecare clasa in parte in functie de functionalitatile comenzilor.
+
+* Ca si functionalitate in plus, ar putea fi implementat un mecanism de notificare a alertelor bazat pe design pattern-ul
+*Observer* in care serverele ar avea rolul de subject, iar grupurile de monitorizare rolul de observer. Fiecare alerta este
+asociata unui server prin comanda ADD EVENT, iar serverul corespunzator notifica toate grupurile de monitorizare conectate care mai
+apoi sa trateze alerta primita.
