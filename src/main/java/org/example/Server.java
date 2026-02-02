@@ -35,7 +35,7 @@ public class Server {
 
         public Builder(String ipAddress, Location location, User owner) {
             if (ipAddress.isBlank())
-                throw new MissingIpAddressException("ADD SERVER: MissingIpAddressException: Server IP Address was not provided.");
+                throw new MissingIpAddressException("MissingIpAddressException: Server IP Address was not provided.");
             else
                 this.ipAddress = ipAddress;
             this.location = location;

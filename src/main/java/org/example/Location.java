@@ -25,7 +25,7 @@ public class Location {
 
         public Builder(String country) {
             if (country.isBlank())
-                throw new LocationException("ADD SERVER: LocationException: Country is missing.");
+                throw new LocationException("LocationException: Country is missing.");
             else
                 this.country = country;
         }

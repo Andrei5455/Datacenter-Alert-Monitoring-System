@@ -14,4 +14,7 @@ public abstract class User {
     public String getName() {
         return this.name;
     }
+    public String getRole() {
+        return this.role;
+    }
 }

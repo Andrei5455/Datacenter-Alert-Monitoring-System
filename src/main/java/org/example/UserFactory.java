@@ -3,7 +3,7 @@ package org.example;
 public class UserFactory {
     public static User create(String name, String role, String email, String department, String clearanceLevel) {
         if (name.isBlank() || role.isBlank())
-            throw new UserException("ADD SERVER: UserException: Name and role can't be empty.");
+            throw new UserException("UserException: Name and role can't be empty.");
         else {
             return switch (role) {
                 case "Operator" -> new Operator(name, role, email, department);

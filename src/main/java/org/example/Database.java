@@ -29,10 +29,28 @@ public class Database {
     public void addResourceGroup(ResourceGroup g) {
         resourceGroups.add(g);
     }
+    public void removeResourceGroup(String ipAddress) {
+        if (ipAddress.isBlank())
+            throw new MissingIpAddressException("MissingIpAddressException: Server IP Address was not provided.");
+        else
+            resourceGroups.remove(new ResourceGroup(ipAddress));
+    }
     public void addResourceGroups(Set<ResourceGroup> groupCollection) {
         resourceGroups.addAll(groupCollection);
     }
     public void addAlert(Alert a) {
         alerts.add(a);
+    }
+    public Boolean findGroup(String ipAddress) {
+        if (ipAddress.isBlank())
+            throw new MissingIpAddressException("MissingIpAddressException: Server IP Address was not provided.");
+        else
+            return resourceGroups.contains(new ResourceGroup(ipAddress));
+    }
+    public ResourceGroup getResourceGroup(String ipAddress) {
+        for (ResourceGroup group : resourceGroups)
+            if (group.getIpAddress().equals(ipAddress))
+                return group;
+        return null;
     }
 }
